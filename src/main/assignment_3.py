@@ -33,4 +33,5 @@ runge_kutta_result = runge_kutta_method(func, t0, y0, h, iterations)
 
 # Print results
 print(f"{euler_result}")
+print("")
 print(f"{runge_kutta_result}")
