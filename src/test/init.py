@@ -1,7 +1,4 @@
-Euler's Method Solution
-
-import numpy as np
-import matplotlib.pyplot as plt
+# Euler's method implementation without external libraries
 
 # Define the differential equation: dy/dt = t - y^2
 def f(t, y):
@@ -16,9 +13,9 @@ n = 10  # Number of iterations
 # Calculate step size
 h = (t_end - t0) / n
 
-# Initialize arrays to store the results
-t_values = np.zeros(n + 1)
-y_values = np.zeros(n + 1)
+# Initialize lists to store the results
+t_values = [0] * (n + 1)
+y_values = [0] * (n + 1)
 
 # Set initial values
 t_values[0] = t0
@@ -35,13 +32,3 @@ print("t\t\ty\t\tdy/dt")
 print("-" * 40)
 for i in range(n + 1):
     print(f"{t_values[i]:.4f}\t\t{y_values[i]:.6f}\t\t{f(t_values[i], y_values[i]):.6f}")
-
-# Plot the results
-plt.figure(figsize=(10, 6))
-plt.plot(t_values, y_values, 'bo-', label="Euler's method")
-plt.xlabel('t')
-plt.ylabel('y')
-plt.title("Euler's Method: dy/dt = t - y^2, y(0) = 1")
-plt.grid(True)
-plt.legend()
-plt.show()
